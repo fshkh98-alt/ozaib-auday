@@ -36,7 +36,7 @@ export default async function ProjectsPage({
               <p className="mt-2 text-sm text-text-muted">{project.shortDesc}</p>
               {project.technologies.length > 0 && (
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
+                  {project.technologies.map((tech: (typeof project.technologies)[number]) => (
                     <span
                       key={tech}
                       className="rounded-md bg-surface-2 px-2 py-1 text-xs text-text-muted"
