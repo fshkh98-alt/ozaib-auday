@@ -14,7 +14,7 @@ export async function Footer({ locale }: { locale: Locale }) {
         <p>Ozaib — Cybersecurity Student</p>
         {socialLinks.length > 0 && (
           <div className="flex flex-wrap items-center justify-center gap-4">
-            {socialLinks.map((link) => (
+            {socialLinks.map((link: (typeof socialLinks)[number]) => (
               <a
                 key={link.id}
                 href={link.url}
