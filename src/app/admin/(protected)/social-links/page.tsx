@@ -48,5 +48,3 @@ export default async function SocialLinksAdminPage() {
   );
 }
 
-
-بعدها ارفع التعديل إلى GitHub وأعد نشر Vercel. هذا الخطأ تحديدًا يجب أن يختفي.
