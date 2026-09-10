@@ -27,7 +27,7 @@ export default async function CertificationsPage({
     <div className="space-y-8">
       <h1 className="text-3xl font-semibold">{t.nav.certifications}</h1>
       <div className="grid gap-4 sm:grid-cols-2">
-        {items.map((cert) => (
+        {items.map((cert: (typeof items)[number]) => (
           <Card key={cert.id}>
             <h2 className="text-lg font-medium">{cert.name}</h2>
             <p className="mt-1 text-sm text-text-muted">{cert.issuer}</p>
