@@ -22,7 +22,7 @@ export default async function MediaAdminPage() {
         </div>
       ) : (
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-          {media.map((m) => (
+          {media.map((m: (typeof media)[number]) => (
             <div key={m.id} className="rounded-md border border-border p-2 text-xs text-text-muted">
               {m.url}
             </div>
