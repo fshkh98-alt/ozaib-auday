@@ -35,7 +35,7 @@ export default async function BlogPostPage({
       <h1>{post.title}</h1>
       <div className="not-prose mb-6 flex flex-wrap gap-2 text-xs text-text-muted">
         {post.category && <span>{post.category.name}</span>}
-        {post.tags.map((tag) => (
+        {post.tags.map((tag: (typeof post.tags)[number]) => (
           <span key={tag.id} className="rounded-md bg-surface-2 px-2 py-1">
             #{tag.name}
           </span>
