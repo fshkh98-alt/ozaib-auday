@@ -4,7 +4,6 @@ import { EmptyState } from "@/components/ui/EmptyState";
 import type { Locale } from "@/i18n/config";
 import ar from "@/i18n/ar.json";
 import en from "@/i18n/en.json";
-import type { Achievement } from "@prisma/client";
 
 function formatDate(date: Date, locale: Locale) {
 return new Intl.DateTimeFormat(locale === "ar" ? "ar" : "en", {
@@ -22,7 +21,7 @@ params: Promise<{ locale: Locale }>;
 const { locale } = await params;
 const t = locale === "ar" ? ar : en;
 
-const items: Achievement[] = await db.achievement.findMany({
+const items = await db.achievement.findMany({
 orderBy: { date: "desc" },
 });
 
@@ -30,12 +29,14 @@ if (items.length === 0) {
 return <EmptyState message={t.common.empty} />;
 }
 
+type AchievementItem = (typeof items)[number];
+
 return ( <div className="space-y-8"> <h1 className="text-3xl font-semibold">
 {t.nav.achievements} </h1>
 
 
   <div className="grid gap-4 sm:grid-cols-2">
-    {items.map((a) => (
+    {items.map((a: AchievementItem) => (
       <Card key={a.id}>
         <h2 className="text-lg font-medium">
           {a.title}
