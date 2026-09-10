@@ -6,7 +6,7 @@ import { deleteCertification } from "./actions";
 
 export default async function CertificationsAdminPage() {
   const items = await db.certification.findMany({
-    orderBy: { date: "desc" },
+    orderBy: { issueDate: "desc" },
   });
 
   return (
