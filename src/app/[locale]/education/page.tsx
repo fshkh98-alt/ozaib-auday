@@ -27,7 +27,7 @@ export default async function EducationPage({
     <div className="space-y-8">
       <h1 className="text-3xl font-semibold">{t.nav.education}</h1>
       <div className="space-y-4">
-        {items.map((edu) => (
+        {items.map((edu: (typeof items)[number]) => (
           <Card key={edu.id}>
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <h2 className="text-lg font-medium">
