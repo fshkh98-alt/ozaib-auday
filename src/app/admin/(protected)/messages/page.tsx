@@ -15,7 +15,7 @@ export default async function MessagesAdminPage() {
         </div>
       ) : (
         <div className="space-y-3">
-          {messages.map((m) => (
+          {messages.map((m: (typeof messages)[number]) => (
             <div key={m.id} className="rounded-lg border border-border bg-surface p-4">
               <div className="flex flex-wrap items-start justify-between gap-2">
                 <div>
