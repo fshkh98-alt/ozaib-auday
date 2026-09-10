@@ -14,7 +14,7 @@ export default async function HomePage({
   const t = locale === "ar" ? ar : en;
 
   const [hasProjects, profile, settings] = await Promise.all([
-    db.project.count().then((c) => c > 0),
+    db.project.count().then((c: number) => c > 0),
     db.profile.findFirst(),
     db.siteSettings.findUnique({ where: { id: "singleton" } }),
   ]);
