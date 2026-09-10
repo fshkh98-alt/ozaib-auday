@@ -32,7 +32,7 @@ export default async function SkillsPage({
             {category}
           </h2>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
-            {items.map((skill) => (
+            {items.map((skill: (typeof items)[number]) => (
               <Card key={skill.id} className="py-4 text-center">
                 <p className="font-medium">{skill.name}</p>
                 <p className="mt-1 text-xs text-text-muted">{skill.level}</p>
