@@ -49,7 +49,7 @@ export default async function AnalyticsAdminPage() {
           <p className="text-sm text-text-muted">No page views recorded yet.</p>
         ) : (
           <div className="divide-y divide-border rounded-lg border border-border">
-            {byPath.map((row) => (
+            {byPath.map((row: (typeof byPath)[number]) => (
               <div key={row.path} className="flex items-center justify-between px-4 py-3 text-sm">
                 <span className="text-text">{row.path}</span>
                 <span className="text-text-muted">{row._count.path}</span>
