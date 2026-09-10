@@ -26,7 +26,7 @@ export default async function WriteupsPage({
     <div className="space-y-8">
       <h1 className="text-3xl font-semibold">{t.nav.writeups}</h1>
       <div className="grid gap-5 sm:grid-cols-2">
-        {writeups.map((writeup) => (
+        {writeups.map((writeup: (typeof writeups)[number]) => (
           <Link key={writeup.id} href={`/${locale}/writeups/${writeup.slug}`}>
             <Card>
               <span className="text-xs uppercase tracking-wide text-accent">
