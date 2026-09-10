@@ -27,7 +27,7 @@ export default async function ExperiencePage({
     <div className="space-y-8">
       <h1 className="text-3xl font-semibold">{t.nav.experience}</h1>
       <div className="space-y-4">
-        {items.map((exp) => (
+        {items.map((exp: (typeof items)[number]) => (
           <Card key={exp.id}>
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <h2 className="text-lg font-medium">
