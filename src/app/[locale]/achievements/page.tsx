@@ -33,7 +33,7 @@ return <EmptyState message={t.common.empty} />;
 return ( <div className="space-y-8"> <h1 className="text-3xl font-semibold">
 {t.nav.achievements} </h1>
 
-```
+
   <div className="grid gap-4 sm:grid-cols-2">
     {items.map((a) => (
       <Card key={a.id}>
@@ -65,7 +65,7 @@ return ( <div className="space-y-8"> <h1 className="text-3xl font-semibold">
     ))}
   </div>
 </div>
-```
+
 
 );
 }
