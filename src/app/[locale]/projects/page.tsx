@@ -24,7 +24,7 @@ export default async function ProjectsPage({
     <div className="space-y-8">
       <h1 className="text-3xl font-semibold">{t.nav.projects}</h1>
       <div className="grid gap-5 sm:grid-cols-2">
-        {projects.map((project) => (
+        {projects.map((project: (typeof projects)[number]) => (
           <Link key={project.id} href={`/${locale}/projects/${project.slug}`}>
             <Card>
               {project.featured && (
