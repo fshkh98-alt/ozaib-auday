@@ -14,10 +14,19 @@ export default async function SkillsAdminPage() {
         rows={skills}
         editHref={(row) => `/admin/skills/${row.id}`}
         emptyMessage="No skills yet. Add your first one."
-        columns={[
-          { header: "Name", render: (s: (typeof items)[number]) => s.name },
-          { header: "Category", render: (s) => s.category },
-          { header: "Level", render: (s) => s.level },
+     columns={[
+  {
+    header: "Name",
+    render: (s: (typeof items)[number]) => s.name,
+  },
+  {
+    header: "Category",
+    render: (s: (typeof items)[number]) => s.category,
+  },
+  {
+    header: "Level",
+    render: (s: (typeof items)[number]) => s.level,
+  },
           {
             header: "",
             render: (s) => (
