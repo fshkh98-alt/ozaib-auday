@@ -23,7 +23,7 @@ export default async function ProjectDetailPage({
 
       {project.technologies.length > 0 && (
         <div className="flex flex-wrap gap-2">
-          {project.technologies.map((tech) => (
+          {project.technologies.map((tech: (typeof project.technologies)[number]) => (
             <span key={tech} className="rounded-md bg-surface-2 px-2 py-1 text-xs text-text-muted">
               {tech}
             </span>
