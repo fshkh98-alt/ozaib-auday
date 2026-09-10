@@ -1,5 +1,5 @@
 import { inputClass, labelClass } from "@/lib/utils";
-import type { Achievement } from "@prisma/client";
+
 
 function toInputDate(d?: Date | null) {
   return d ? d.toISOString().slice(0, 10) : "";
