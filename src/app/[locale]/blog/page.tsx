@@ -26,7 +26,7 @@ export default async function BlogPage({
     <div className="space-y-8">
       <h1 className="text-3xl font-semibold">{t.nav.blog}</h1>
       <div className="grid gap-5 sm:grid-cols-2">
-        {posts.map((post) => (
+        {posts.map((post: (typeof posts)[number]) => (
           <Link key={post.id} href={`/${locale}/blog/${post.slug}`}>
             <Card>
               {post.category && (
