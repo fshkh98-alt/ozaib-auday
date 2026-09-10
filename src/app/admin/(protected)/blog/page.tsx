@@ -9,17 +9,35 @@ export default async function BlogAdminPage() {
     orderBy: { createdAt: "desc" },
     include: { category: true },
   });
+
   return (
     <div>
       <AdminPageHeader title="Blog" newHref="/admin/blog/new" />
+
       <DataTable
         rows={posts}
         editHref={(row) => `/admin/blog/${row.id}`}
         columns={[
-          { header: "Title", render: (p) => p.title },
-          { header: "Category", render: (p) => p.category?.name ?? "—" },
-          { header: "Status", render: (p) => p.status },
-          { header: "", render: (p) => <DeleteButton action={deletePost.bind(null, p.id)} /> },
+          {
+            header: "Title",
+            render: (p: (typeof posts)[number]) => p.title,
+          },
+          {
+            header: "Category",
+            render: (p: (typeof posts)[number]) => p.category?.name ?? "—",
+          },
+          {
+            header: "Status",
+            render: (p: (typeof posts)[number]) => p.status,
+          },
+          {
+            header: "",
+            render: (p: (typeof posts)[number]) => (
+              <DeleteButton
+                action={deletePost.bind(null, p.id)}
+              />
+            ),
+          },
         ]}
       />
     </div>
