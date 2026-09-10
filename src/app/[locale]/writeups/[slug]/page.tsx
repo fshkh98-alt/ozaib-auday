@@ -20,7 +20,7 @@ export default async function WriteupDetailPage({
       <h1>{writeup.title}</h1>
       <div className="not-prose mb-6 flex flex-wrap gap-2 text-xs text-text-muted">
         <span>{writeup.type.replace("_", " ")}</span>
-        {writeup.tags.map((tag) => (
+        {writeup.tags.map((tag: (typeof writeup.tags)[number]) => (
           <span key={tag.id} className="rounded-md bg-surface-2 px-2 py-1">
             #{tag.name}
           </span>
