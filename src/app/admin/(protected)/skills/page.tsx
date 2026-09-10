@@ -15,7 +15,7 @@ export default async function SkillsAdminPage() {
         editHref={(row) => `/admin/skills/${row.id}`}
         emptyMessage="No skills yet. Add your first one."
         columns={[
-          { header: "Name", render: (s) => s.name },
+          { header: "Name", render: (s: (typeof items)[number]) => s.name },
           { header: "Category", render: (s) => s.category },
           { header: "Level", render: (s) => s.level },
           {
