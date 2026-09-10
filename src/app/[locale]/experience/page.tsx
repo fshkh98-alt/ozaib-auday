@@ -47,7 +47,7 @@ export default async function ExperiencePage({
             {exp.description && <p className="mt-3 text-sm text-text-muted">{exp.description}</p>}
             {exp.technologies.length > 0 && (
               <div className="mt-3 flex flex-wrap gap-2">
-                {exp.technologies.map((tech) => (
+                {exp.technologies.map((tech: (typeof exp.technologies)[number]) => (
                   <span key={tech} className="rounded-md bg-surface-2 px-2 py-1 text-xs text-text-muted">
                     {tech}
                   </span>
